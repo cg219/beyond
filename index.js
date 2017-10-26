@@ -9,16 +9,16 @@ app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.get('/vue/*', (req, res) => {
+app.get('/vue', (req, res) => {
   res.sendFile(path.resolve(__dirname, './views/vue.html'));
 })
 
-app.get('/angular/*', (req, res) => {
+app.get('/angular', (req, res) => {
   res.sendFile(path.resolve(__dirname, './views/angular.html'));
 })
 
 app.get('/', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './views/vue.html'));
+  res.sendFile(path.resolve(__dirname, './views/index.html'));
 })
 
 app.listen(PORT, () => {

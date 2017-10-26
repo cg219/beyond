@@ -1,0 +1,12 @@
+<div class="playlist">
+  <h1 class="playlist__title">My Youtube Playlist</h1>
+  <ul class="playlist__list">
+    <item ng-repeat="item in $ctrl.items" 
+        title="item.snippet.title"
+        description="item.snippet.description"
+        date="item.snippet.publishedAt"
+        thumbnail="item.snippet.thumbnails"
+        video-id="item.snippet.resourceId.videoId"
+        on-selected="$ctrl.onItemSelect(value)" />
+  </ul>
+</div>

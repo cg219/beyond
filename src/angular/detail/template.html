@@ -1,0 +1,10 @@
+<div class="detail">
+  <span class="detail__back" ng-click="$ctrl.close()">&lt; Back to List of Videos</span>
+  <h1 class="detail__title">{{$ctrl.title}}</h1>
+  <h2 class="detail__subtitle">Published on {{$ctrl.date}}</h2>
+  <div class="detail__player-wrapper">
+    <iframe ng-if="$ctrl.videoID" class="detail__player" type="text/html" width="640" height="360" src="{{$ctrl.embedURL}}"
+frameborder="0"></iframe>
+  </div>
+  <p class="detail__description">{{$ctrl.description}}</p>
+</div>

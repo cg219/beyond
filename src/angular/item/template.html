@@ -1,0 +1,8 @@
+<li class="item">
+  <div class="item__info_container">
+    <h1 class="item__title" ng-click="$ctrl.sendItem()">{{$ctrl.title}}</h1>
+    <h2 class="item__subtitle">Published on {{$ctrl.formattedDate}}</h2>
+    <p class="item__description">{{$ctrl.truncatedDescription}}</p>
+  </div>
+  <img ng-click="$ctrl.sendItem()" src="{{$ctrl.thumbnailImage}}" alt="" class="item__thumbnail">
+</li>

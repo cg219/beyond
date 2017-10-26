@@ -1,10 +1,10 @@
 const path = require('path');
 const ExtractText = require('extract-text-webpack-plugin');
-const Style = new ExtractText('./../css/styles.css');
+const Style = new ExtractText('./../css/[name].styles.css');
 
 module.exports = {
   entry: {
-    vue: './src/vue/index.js',
+    angular: './src/angular/index.js',
   },
   output: {
     filename: '[name].bundle.js',
@@ -20,18 +20,6 @@ module.exports = {
         })
       },
       {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-            scss: Style.extract({
-              use: 'css-loader!sass-loader',
-              fallback: 'vue-style-loader'
-            })
-          }
-        }
-      },
-      {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
@@ -42,6 +30,10 @@ module.exports = {
       {
         test: /\.(png|jpg)$/,
         loader: 'url-loader'
+      },
+      {
+        test: /\.html$/,
+        loader: 'html-loader'
       }
     ]
   },

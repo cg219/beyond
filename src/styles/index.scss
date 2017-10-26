@@ -1,0 +1,150 @@
+@import "~normalize.css";
+
+$black: #232323;
+$gray: #9a9a9a;
+$font: "Open Sans", sans-serif;
+
+$tablet: "(min-width: 768px)";
+
+html, body, a, p, strong, li, h1, h2, h3, h4, h5, h6 {
+  font-family: $font;
+  color: $black;
+}
+
+.app {
+
+}
+
+.detail {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 30px;
+
+  &__back {
+    text-decoration: underline;
+    color: $gray;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 30px 0 0;
+    cursor: pointer;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+    color: $gray;
+    margin: 0 0 20px;
+  }
+
+  &__player-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+    background: #000;
+
+    @media #{$tablet} {
+      float: left;
+      width: 50%;
+      padding-bottom: 28.125%;
+    }
+  }
+
+  &__player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0 20px 0 0;
+    box-sizing: border-box;
+
+    @media #{$tablet} {
+      float: left;
+      width: 50%;
+      padding: 0 20px 0;
+      margin: 0;
+    }
+  }
+}
+
+.playlist {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 20px;
+
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__title {
+    color: $black;
+    font-size: 30px;
+  }
+}
+
+.item {
+  border: 1px solid rgba($black, .5);
+  box-sizing: border-box;
+  margin: 0 auto 20px;
+  padding: 10px;
+  width: 100%;
+  overflow: hidden;
+
+  &__info_container {
+    box-sizing: border-box;
+
+    @media #{$tablet} {
+      float: right;
+      width: 50%;
+      padding-left: 20px;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+    color: $gray;
+    margin: 0 0 20px;
+  }
+
+  &__description {
+    display: none;
+    font-size: 16px;
+    line-height: 24px;
+
+    @media #{$tablet} {
+      display: block;
+    }
+  }
+
+  &__thumbnail {
+    width: 100%;
+    cursor: pointer;
+
+    @media #{$tablet} {
+      width: 50%;
+    }
+  }
+}
